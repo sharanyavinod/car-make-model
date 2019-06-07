@@ -7,6 +7,11 @@ import * as Actions from '../actions';
 import ModelForm from "./model-form";
 import Summary from "./summary";
 
+/*
+  Container component with only the main component with a wrapper
+  Simple Summary component included here to display the keys selected
+  For prod implementations, this can be removed and limited to one core component
+*/
 class Container extends Component {
   componentDidMount() {
     const { fetchMake } = this.props;
@@ -22,10 +27,13 @@ class Container extends Component {
       <div>
         <h1 className="title">Manual listing</h1>
         <ModelForm {...this.props }/>
-        <Summary
-          show={isSummaryAvailable}
-          make={makeSelected}
-          model={modelSelected} />
+        {(
+          <Summary
+            show={isSummaryAvailable}
+            make={makeSelected}
+            model={modelSelected} />
+          ) || ""
+        }
       </div>
     );
   }
@@ -33,7 +41,7 @@ class Container extends Component {
 
 Container.propTypes = {
   makeSelected: PropTypes.string,
-  modelSelected: PropTypes.string, 
+  modelSelected: PropTypes.string,
   isSummaryAvailable: PropTypes.bool
 
 };
