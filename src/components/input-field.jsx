@@ -18,7 +18,7 @@ const InputField = ({ label, values, id, saveSelected, disabled }) => {
         id={id}
         onChange={(e) => saveSelected(e.target.value)}
         disabled={disabled}>
-        <option>{label}</option>
+        <option value="">{label}</option>
         {options}
       </select>
     </div>

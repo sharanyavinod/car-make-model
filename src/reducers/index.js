@@ -21,7 +21,9 @@ const dataReducer = (state = initialState, action) => {
       });
     case Actions.SAVE_MAKE:
       return Object.assign({}, state, {
-        makeSelected: action.payload
+        makeSelected: action.payload,
+        modelSelected: "",
+        isSummaryAvailable: false
       });
     case Actions.SET_MODEL:
       return Object.assign({}, state, {
