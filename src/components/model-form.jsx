@@ -8,9 +8,6 @@ const ModelForm = (props) => {
   } = props;
   return (
     <div className="formContainer">
-      <h2 className="font-bold text-2xl text-grey-500">
-        Make & Model
-      </h2>
       <InputField
         id="make"
         label="Select a make"
