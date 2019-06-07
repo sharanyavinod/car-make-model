@@ -31,6 +31,13 @@ class Container extends Component {
   }
 }
 
+Container.propTypes = {
+  makeSelected: PropTypes.string,
+  modelSelected: PropTypes.string, 
+  isSummaryAvailable: PropTypes.bool
+
+};
+
 const mapStateToProps = (data) => ({
   carMakes: data.carMakes,
   carModels: data.carModels,

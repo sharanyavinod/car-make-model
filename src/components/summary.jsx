@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const Summary = ({ show, make, model }) => {
   return (show ? (
@@ -9,6 +10,12 @@ const Summary = ({ show, make, model }) => {
 
     </div>
   ) : "");
+};
+
+Summary.propTypes = {
+  show: PropTypes.bool, 
+  make: PropTypes.string,
+  model: PropTypes.string
 };
 
 export default Summary;

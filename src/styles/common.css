@@ -22,9 +22,20 @@ body {
 
 .dropdown {
   width: 40%;
-  height: 40px;
+  height: 50px;
   background: none;
-  font-size: 0.8em;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.dropdown:focus {
+  border: 2px solid #3f51b5;
+  outline: none;
+}
+
+.dropdown:disabled {
+  background: #eee;
+  opacity: 0.5;
 }
 
 .dropdownContainer {
@@ -41,13 +52,16 @@ body {
   background-color: #3f51b5;
   width: 40%;
   align-self: center;
-  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 3px 1px -2px rgba(0,0,0,0.12);
   box-sizing: border-box;
   border-radius: 4px;
-  padding: 0.5em 2em;
+  padding: 0.75em 2em;
   text-transform: uppercase;
   font-weight: 500;
   font-size: 0.875em;
+}
+
+.primaryBtn:focus {
+  outline: none;
 }
 
 .primaryBtn:disabled {
@@ -70,10 +84,16 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  body {
+    font-size:18px;
+  }
   .dropdown {
     width: 100%;
   }
   .summary {
     width: auto;
+  }
+  .primaryBtn {
+    width: 100%;
   }
 }

@@ -1,11 +1,19 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 import InputField from "./input-field";
 
 const ModelForm = (props) => {
   const {
-    carMakes, carModels, saveMake, saveModel, makeSelected, modelSelected, showSummary
+    carMakes,
+    carModels,
+    saveMake,
+    saveModel,
+    makeSelected,
+    modelSelected,
+    showSummary
   } = props;
+
   return (
     <div className="formContainer">
       <InputField
@@ -25,6 +33,16 @@ const ModelForm = (props) => {
        disabled={!(makeSelected && modelSelected)}>Continue</button>
     </div>
   );
+};
+
+ModelForm.propTypes = {
+  carMakes: PropTypes.array, 
+  carModels: PropTypes.array,
+  saveMake: PropTypes.func,
+  saveModel: PropTypes.func,
+  makeSelected: PropTypes.string,
+  modelSelected: PropTypes.string,
+  showSummary: PropTypes.func
 };
 
 export default ModelForm;
