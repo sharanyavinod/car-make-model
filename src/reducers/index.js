@@ -1,3 +1,4 @@
+/*Basic root reducer*/
 import * as Actions from "../constants/actions";
 
 export const initialState = {

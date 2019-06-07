@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-import InputField from "./input-field";
+import SelectField from "./select-field";
 
+/* Simple container for the user form -> For complex forms, can integrate redux-form*/
 const ModelForm = (props) => {
   const {
     carMakes,
@@ -16,12 +17,12 @@ const ModelForm = (props) => {
 
   return (
     <div className="formContainer">
-      <InputField
+      <SelectField
         id="make"
         label="Select a make"
         saveSelected={saveMake}
         values={carMakes} />
-      <InputField
+      <SelectField
         disabled={!carModels.length}
         id="model"
         label="Select a model"
@@ -36,7 +37,7 @@ const ModelForm = (props) => {
 };
 
 ModelForm.propTypes = {
-  carMakes: PropTypes.array, 
+  carMakes: PropTypes.array,
   carModels: PropTypes.array,
   saveMake: PropTypes.func,
   saveModel: PropTypes.func,

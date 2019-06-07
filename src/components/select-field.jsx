@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-const InputField = ({ label, values, id, saveSelected, disabled }) => {
+/* Custom component for select field */
+const SelectField = ({ label, values, id, saveSelected, disabled }) => {
 
   const options = values.map(value => {
     const {id, key, name } = value;
@@ -25,10 +26,10 @@ const InputField = ({ label, values, id, saveSelected, disabled }) => {
   );
 };
 
-InputField.propTypes = {
+SelectField.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string,
   key: PropTypes.string
 };
 
-export default InputField;
+export default SelectField;

@@ -1,3 +1,4 @@
+/*Basic root saga*/
 import {
   takeEvery, call, put, select, fork, all
 } from 'redux-saga/effects';
@@ -36,7 +37,6 @@ function* fetchModel() {
     yield put(throwError(e));
   }
 }
-
 
 
 export function* watchFetchMake() {
